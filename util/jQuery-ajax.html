@@ -10,6 +10,9 @@
 <body>
     
 <div>Check console</div>
+
+<div id="agents">[Agents]</div>
+
     <script>
         $(document).ready(function(){
 
@@ -21,7 +24,11 @@
             // });
             $.ajax({
                 method:"GET",
-                url: "https://490ebf32-abc2-4572-88fd-e036edebd377.mock.pstmn.io/localhost:9090/api/agents"
+                url: "https://490ebf32-abc2-4572-88fd-e036edebd377.mock.pstmn.io/localhost:9090/api/agents",
+                success: function (data) {
+                    console.log(data); 
+                    $('agents').html(data);//todo:
+                },
             })
             
         })
